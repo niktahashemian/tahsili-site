@@ -1,0 +1,999 @@
+/* ======================================== */
+/* تنظیمات اصلی هدر با بوت استرپ */
+/* ======================================== */
+
+.ras-header {
+    background:green;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    direction: rtl;
+    width: 100%;
+}
+
+.ras-main-nav {
+    background: #fff;
+    border-bottom: 1px solid #eaeaea;
+    padding: 45px 0;
+}
+
+.ras-menu-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    height: 60px;
+}
+
+.ras-menu-item {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.ras-home-item {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    padding: 8px 0 !important;
+}
+
+.ras-logo-image {
+    width: 220px;
+    margin-bottom: 30px;
+    height: auto;
+    max-height: 820px;
+    object-fit: contain;
+}
+
+.ras-title-text {
+    margin-right: 65px;
+    white-space: nowrap;
+    margin-bottom: 0;
+    font-size: xxx-large;
+    flex: 1;
+    text-align: center;
+}
+
+.ras-menu-link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 0 20px;
+    height: 100%;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.ras-menu-link:hover,
+.ras-menu-link.active {
+    color: #8ed557;
+    border-bottom-color: #8ed557;
+}
+
+/* ======================================== */
+/* دکمه همبرگر - با بوت استرپ */
+/* ======================================== */
+
+.ras-mobile-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    color: #333;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ras-mobile-toggle:hover {
+    background: #f5f5f5;
+}
+
+/* ======================================== */
+/* منوی موبایل */
+/* ======================================== */
+
+.menu-overlay.ras-mobile-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.menu-overlay.ras-mobile-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.ras-mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 85%;
+    max-width: 380px;
+    height: 100%;
+    background-color: #ffffff;
+    transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-y: auto;
+    padding: 24px 20px;
+    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+    z-index: 10000;
+}
+
+.menu-overlay.ras-mobile-overlay.active .ras-mobile-menu {
+    right: 0;
+}
+
+.ras-mobile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #f0f0f0;
+    margin-bottom: 10px;
+}
+
+.ras-mobile-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.ras-mobile-close {
+    background: #f5f5f5;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    color: #666;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ras-mobile-close:hover {
+    background: #e8e8e8;
+    color: #333;
+}
+
+.ras-mobile-menu-item {
+    padding: 6px 0;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.ras-mobile-menu-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    padding: 12px 10px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+.ras-mobile-menu-link:hover {
+    background-color: #faf3e8;
+    color: #ffb726;
+}
+
+.ras-mobile-content {
+    padding: 10px 0;
+}
+
+/* ======================================== */
+/* ریسپانسیو با کلاس‌های بوت استرپ */
+/* ======================================== */
+
+/* تبلت و موبایل (کمتر از 992px) - بوت استرپ d-lg-none */
+@media (max-width: 991px) {
+    .ras-title-text {
+        margin-right: 10px !important;
+        font-size: 14px !important;
+    }
+    
+    .ras-logo-image {
+        width: 80px !important;
+        height: auto !important;
+    }
+    
+    .ras-main-nav {
+        padding: 10px 0 !important;
+    }
+}
+
+/* دسکتاپ (بزرگتر از 992px) - بوت استرپ d-lg-flex */
+@media (min-width: 992px) {
+    .ras-home-item {
+        gap: 15px !important;
+    }
+}
+
+/* ======================================== */
+/* موبایل خیلی کوچک */
+/* ======================================== */
+
+@media (max-width: 576px) {
+    .ras-title-text {
+        font-size: 12px !important;
+        margin-right: 5px !important;
+    }
+    
+    .ras-logo-image {
+        width: 60px !important;
+    }
+}
+
+/* ======================================== */
+/* بقیه استایل‌های قبلی شما */
+/* ======================================== */
+
+.ras-header-top {
+    padding: 15px 0;
+    border-bottom: 1px solid #eaeaea;
+    background-color: #fff;
+}
+
+/* ... بقیه استایل‌های شما اینجا ... */
+/* ======================================== */
+/* استایل‌های صفحه اصلی */
+/* ======================================== */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  padding: 100px 60px 2rem; 
+  direction: rtl;
+  padding-top: 100px;
+  
+}
+
+/* دکمه‌های انتخاب پایه */
+.buttonGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2.5rem 3rem;
+  border-radius: 2rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid #e2e8f0;
+  margin-bottom: 2rem;
+  width: 100%;
+  max-width: 800px;
+}
+
+.gradeButton {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 1rem 2.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  min-width: 140px;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  text-align: center; /* متن داخل دکمه وسط */
+}
+
+.gradeButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+.gradeButton:active {
+  transform: translateY(0);
+}
+
+.gradeButton.active {
+  background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+  box-shadow: 0 4px 15px rgba(72, 187, 120, 0.4);
+}
+
+/* انتخاب رشته */
+.reshte {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 2rem;
+  animation: fadeIn 0.5s ease;
+}
+
+.message {
+  padding: 1.2rem 2.5rem;
+  background: white;
+  border-radius: 50px;
+  color: #2d3748;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  border: 2px solid #e2e8f0;
+}
+
+.message:hover {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+  border-color: #667eea;
+}
+
+.message.selected {
+  background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+  color: white;
+  border-color: #48bb78;
+}
+
+/* دکمه بازگشت */
+.back-button {
+  background: transparent;
+  border: none;
+  color: #4a5568;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.5rem 1.5rem;
+  margin-bottom: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  border-radius: 50px;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.back-button:hover {
+  color: #48bb78;
+  transform: translateX(-5px);
+  background: rgba(72, 187, 120, 0.1);
+}
+
+/* بخش آزمون‌ها */
+.exam-section {
+  width: 100%;
+  max-width: 1200px;
+  animation: fadeIn 0.5s ease;
+  padding: 0 1rem;
+}
+
+.exam-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.exam-title {
+  font-size: 2rem;
+  color: #2d3748;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+.exam-subtitle {
+  font-size: 1.1rem;
+  color: #718096;
+}
+
+.exam-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.exam-card {
+  background: white;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.exam-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+  border-color: var(--exam-color, #48bb78);
+}
+
+.exam-icon {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.exam-name {
+  font-size: 1.3rem;
+  color: #2d3748;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.exam-description {
+  color: #718096;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+  font-size: 0.9rem;
+}
+
+.exam-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.exam-card:hover .exam-button {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* دکمه ریست */
+.resetButton {
+  margin-top: 1.5rem;
+  padding: 0.75rem 2rem;
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+}
+
+.resetButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(239, 68, 68, 0.4);
+}
+
+/* نیم سال‌ها */
+.semester-section {
+  width: 100%;
+  max-width: 900px;
+  animation: fadeIn 0.5s ease-in-out;
+  padding: 0 1rem;
+}
+
+.semester-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.semester-title {
+  font-size: 2rem;
+  color: #2d3748;
+  margin: 0.5rem 0;
+}
+
+.semester-subtitle {
+  font-size: 1.1rem;
+  color: #718096;
+  margin-bottom: 0.5rem;
+}
+
+.semester-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+}
+
+.semester-card {
+  background: white;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  width: 280px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  border: 2px solid transparent;
+}
+
+.semester-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+  border-color: #4CAF50;
+}
+
+.semester-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.semester-name {
+  font-size: 1.4rem;
+  color: #2d3748;
+  margin: 0.5rem 0;
+  font-weight: 700;
+}
+
+.semester-description {
+  color: #718096;
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+.semester-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+  color: white;
+  border-radius: 50px;
+  margin-top: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.semester-card:hover .semester-button {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(72, 187, 120, 0.4);
+}
+
+/* انیمیشن‌ها */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ======================================== */
+/* ریسپانسیو */
+/* ======================================== */
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem 0.5rem;
+  }
+
+  .buttonGroup {
+    padding: 1.5rem;
+    gap: 1rem;
+    border-radius: 1.5rem;
+  }
+
+  .gradeButton {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    min-width: 100px;
+  }
+
+  .reshte {
+    gap: 1rem;
+    padding: 0.5rem;
+  }
+
+  .message {
+    padding: 0.9rem 1.8rem;
+    font-size: 1rem;
+  }
+
+  .exam-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .exam-title {
+    font-size: 1.5rem;
+  }
+
+  .exam-card {
+    padding: 1.5rem;
+  }
+
+  .semester-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .semester-card {
+    width: 90%;
+    max-width: 320px;
+  }
+
+  .semester-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .gradeButton {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+    min-width: 80px;
+  }
+
+  .message {
+    padding: 0.7rem 1.4rem;
+    font-size: 0.9rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .exam-icon {
+    font-size: 2.5rem;
+  }
+
+  .exam-name {
+    font-size: 1.1rem;
+  }
+
+  .resetButton {
+    width: 100%;
+    padding: 0.7rem;
+  }
+
+  .back-button {
+    font-size: 0.9rem;
+    padding: 0.4rem 1rem;
+  }
+}
+/* ============================================================
+   FOOTER STYLES - Light Theme with Blue Accents
+   ============================================================ */
+
+/* پاک کردن استایل‌های پیش‌فرض */
+.footer-list,
+.footer-list-item {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* ============ فوتر اصلی ============ */
+.footer-main {
+  background-color: #f9fafb; /* bg-gray-50 */
+  border-top: 1px solid #e5e7eb; /* border-gray-200 */
+  padding: 40px 20px 24px 20px;
+  margin-top: 80px;
+  direction: rtl;
+  font-family: Tahoma, Arial, sans-serif;
+  text-align: right;
+  color: #4b5563;
+}
+
+.footer-main-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* ============ ردیف اصلی: ۴ ستون ============ */
+.footer-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937; /* text-gray-800 */
+  margin: 0 0 16px 0;
+}
+
+.footer-list-item {
+  margin-bottom: 8px;
+}
+
+.footer-link {
+  font-size: 14px;
+  color: #4b5563; /* text-gray-600 */
+  text-decoration: none;
+  transition: color 0.2s ease;
+  display: inline-block;
+}
+
+.footer-link:hover {
+  color: #2563eb; /* hover:text-blue-600 */
+}
+
+/* آیتم‌های ارتباط با ما (آیکون + متن) */
+.footer-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #4b5563;
+  margin-bottom: 12px;
+}
+
+.footer-icon-blue {
+  color: #3b82f6; /* text-blue-500 */
+  flex-shrink: 0;
+}
+
+/* ============ خط جداکننده ============ */
+.footer-divider {
+  border-top: 1px solid #e5e7eb;
+  margin: 40px 0 32px 0;
+}
+
+/* ============ بخش پایینی: پشتیبانی + شبکه‌های اجتماعی ============ */
+.footer-bottom-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-bottom: 32px;
+}
+
+/* باکس پشتیبانی */
+.footer-ticket-section {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.footer-ticket-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #1f2937;
+  margin: 0 0 12px 0;
+}
+
+.footer-ticket-description {
+  font-size: 14px;
+  color: #4b5563;
+  line-height: 1.7;
+  margin: 0 0 20px 0;
+}
+
+.footer-ticket-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #2563eb; /* bg-blue-600 */
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 12px 24px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
+}
+
+.footer-ticket-link:hover {
+  background-color: #1d4ed8; /* hover:bg-blue-700 */
+  box-shadow: 0 6px 15px rgba(37, 99, 235, 0.35);
+  transform: translateY(-2px);
+}
+
+/* باکس شبکه‌های اجتماعی */
+.footer-social-section {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.footer-social-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #1f2937;
+  margin: 0 0 20px 0;
+}
+
+.footer-social-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+/* دکمه‌های متنی (اینستاگرام و تلگرام) */
+.footer-social-link-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #f3f4f6; /* bg-gray-100 */
+  color: #4b5563;
+  font-size: 12px;
+  padding: 8px 16px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.footer-social-link-text:hover {
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.footer-social-link-text.instagram:hover {
+  background: linear-gradient(to left, #ec4899, #a855f7);
+  box-shadow: 0 4px 12px rgba(236, 72, 153, 0.35);
+}
+
+.footer-social-link-text.telegram:hover {
+  background: linear-gradient(to left, #38bdf8, #3b82f6);
+  box-shadow: 0 4px 12px rgba(56, 189, 248, 0.35);
+}
+
+/* دکمه‌های فقط آیکون */
+.footer-social-link-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #f3f4f6;
+  color: #4b5563;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.footer-social-link-icon:hover {
+  color: #ffffff;
+  transform: translateY(-2px) scale(1.05);
+}
+
+.footer-social-link-icon.whatsapp:hover {
+  background-color: #22c55e;
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.35);
+}
+
+.footer-social-link-icon.email:hover {
+  background-color: #f59e0b;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.35);
+}
+
+.footer-social-link-icon.phone:hover {
+  background-color: #3b82f6;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.35);
+}
+
+/* ============ کپی‌رایت ============ */
+.footer-copyright {
+  border-top: 1px solid #e5e7eb;
+  padding-top: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+}
+
+.footer-copyright p {
+  font-size: 12px;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* ============ ریسپانسیو ============ */
+
+/* تبلت */
+@media (max-width: 992px) {
+  .footer-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  .footer-bottom-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+/* موبایل */
+@media (max-width: 576px) {
+  .footer-main {
+    padding: 35px 15px 20px 15px;
+    margin-top: 50px;
+  }
+
+  .footer-row {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .footer-title {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  .footer-link {
+    font-size: 13.5px;
+  }
+
+  .footer-ticket-section,
+  .footer-social-section {
+    padding: 20px 15px;
+  }
+
+  .footer-ticket-title,
+  .footer-social-title {
+    font-size: 16px;
+  }
+
+  .footer-ticket-description {
+    font-size: 13px;
+  }
+
+  .footer-social-link-text {
+    font-size: 11px;
+    padding: 7px 12px;
+  }
+
+  .footer-social-link-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .footer-copyright p {
+    font-size: 11px;
+  }
+}
+
+/* دسکتاپ بزرگ‌تر */
+@media (min-width: 1024px) {
+  .footer-copyright {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
